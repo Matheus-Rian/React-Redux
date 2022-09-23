@@ -4,11 +4,11 @@ export interface Product {
   price: number,
 }
 
-export interface itemCart {
+export interface ItemCart {
   product: Product,
   quantity: number,
 }
 
 export interface CartState {
-  items: itemCart[],
+  items: ItemCart[],
 }
