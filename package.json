@@ -10,6 +10,7 @@
     "server": "json-server db.json -p 4444"
   },
   "dependencies": {
+    "@redux-devtools/extension": "^3.2.3",
     "axios": "^0.27.2",
     "immer": "^9.0.15",
     "react": "^18.2.0",
