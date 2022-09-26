@@ -13,7 +13,7 @@ const INITIAL_STATE: CartState = {
 const cart: Reducer<CartState> = (state = INITIAL_STATE, action) => {
   return produce(state, (draft) => {
     switch (action.type) {
-      case "ADD_PRODUCT_TO_CART": {
+      case "ADD_PRODUCT_TO_CART_SUCCESS": {
         const { product } = action.payload as actionPayload;
 
         const productInCartIndex = draft.items.findIndex((item: ItemCart) => item.product.id === product.id);
