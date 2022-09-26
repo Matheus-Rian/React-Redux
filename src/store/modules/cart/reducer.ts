@@ -8,6 +8,7 @@ interface actionPayload {
 
 const INITIAL_STATE: CartState = {
   items: [],
+  failedStockChecked: [],
 };
 
 const cart: Reducer<CartState> = (state = INITIAL_STATE, action) => {
@@ -26,7 +27,7 @@ const cart: Reducer<CartState> = (state = INITIAL_STATE, action) => {
         break;
       }
       case "ADD_PRODUCT_TO_CART_FAILURE": {
-        console.log('failure', action.payload)
+        draft.failedStockChecked.push(action.payload.productId);
         break;
       }
       default:
