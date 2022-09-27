@@ -3,6 +3,7 @@ import { takeLatest, select, call, put } from 'redux-saga/effects';
 import { IStateStore } from '../..';
 import api from '../../../services/api';
 import { addProductToCartRequest, addProductToCartSuccess, addProductToCartFailure } from './actions';
+import { ActionTypes } from './models';
 
 type CheckProductStockRequest = ReturnType<typeof addProductToCartRequest>;
 
@@ -27,7 +28,7 @@ function* checkProductStock({ payload }: CheckProductStockRequest) {
 }
 
 function* mySaga() {
-  yield takeLatest('ADD_PRODUCT_TO_CART_REQUEST', checkProductStock);
+  yield takeLatest(ActionTypes.addProductRequest, checkProductStock);
 }
 
 export default mySaga;
